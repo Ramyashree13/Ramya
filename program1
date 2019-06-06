@@ -1,24 +1,49 @@
 #include<stdio.h>
+int getinput1();
+int getinput2();
+int addition(int c,int d);
+int output(int result);
 int main()
 {
-  	int c,d,res;
-	getinput();
+  	int c,d,result;
+	
 
-	printf("the two numbers",c,d);
-	c=a;
-	d=b;
-	add(c,d);
-	printf(add);
+	
+	c=getinput1();;
+	
+
+	d=getinput2();
+	printf("the two numbers %d and %d",c,d);
+	
+	result=addition(c,d);
+	output(result);
+	return 0;
+
   
  }
-int getinput()
+int getinput1()
 {
-  printf("enter the values to add two numbers");
-  scanf("%d%d",&a,&b);
-  return (a,b);
+  int a;
+  printf("enter the value of a");
+  scanf("%d",&a);
+  return (a);
 }
-int add(int c,int d)
+int getinput2()
 {
+  int b;
+  printf("enter the value of ");
+  scanf("%d",&b);
+  return (b);
+}
+int addition(int c,int d)
+{
+	int add;
 	add=c+d;
 	return(add);
+}
+int output(int result)
+{
+	printf("the addition of two numbers are %d",result);
+	return 0;
+
 }
