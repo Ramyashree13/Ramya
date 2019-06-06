@@ -1,12 +1,24 @@
 #include<stdio.h>
 int main()
 {
-  getinput();
-  printf("the two numbers");
+  	int c,d,res;
+	getinput();
+
+	printf("the two numbers",c,d);
+	c=a;
+	d=b;
+	add(c,d);
+	printf(add);
+  
  }
 int getinput()
 {
   printf("enter the values to add two numbers");
   scanf("%d%d",&a,&b);
   return (a,b);
+}
+int add(int c,int d)
+{
+	add=c+d;
+	return(add);
 }
