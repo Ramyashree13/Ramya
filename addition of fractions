@@ -1,6 +1,49 @@
-void input(struct fraction *f1,struct fraction *f2);
-void compute(struct fraction *,struct fraction *);
-int gcd(struct fraction *,struct fraction *);
+# include<stdio.h>
+struct fraction
+{
+        int num;
+        int den;
+};
+
+int gcd(int a, int b)
+{
+                int t;
+
+                while(b!=0)
+                {
+                        t=b;
+                        b=a % b;
+                        a=t;
+                }
+                //gcd = a;
+                return a;
+
+}
+
+
+
+
+void input(struct fraction *f1,struct fraction *f2)
+{
+        printf("enter 1st and 2nd number\n");
+        scanf("%d%d%d%d",&f1->num,&f1->den,&f2->num,&f2->den);
+        printf("the first number is %d/%d\n the second number is %d/%d\n",f1->num,f1->den,f2->num,f2->den);
+}
+
+
+void compute(struct fraction *f1,struct fraction *f2)
+{
+
+        int r,sum,m,n,lcm=0;
+        r=gcd(f1->den,f2->den);
+        printf("gcd=%d\n",r);
+        lcm=(( f1->den) * (f2->den)) / r;
+        printf("lcm=%d\n",lcm);
+        m=(f1->num * lcm)/ f1->den;
+        n=(f2->num * lcm)/ f2->den;
+        sum=m+n;
+        printf("addition of %d/%d+%d/%d=%d/%d",f1->num,f1->den,f2->num,f2->den,sum,lcm);
+}
 
 
 int main()
@@ -13,46 +56,3 @@ int main()
         compute(p1,p2);
         return 0;
 }
-
-
-void input(struct fraction *f1,struct fraction *f2)
-{
-        printf("enter 1st and 2nd number\n");
-        scanf("%d%d%d%d",&f1->num,&f1->den,&f2->num,&f2->den);
-        printf("%d/%d\n%d/%d\n",f1->num,f1->den,f2->num,f2->den);
-}
-
-
-void compute(struct fraction *f1,struct fraction *f2)
-{
-
-        int r,sum,m,n,lcm=0;
-        r=gcd(f1,f2);
-        printf("gcd=%d\n",r);
-
-
-        printf("%d\n%d\n",f1->den,f2->den);
-        lcm=(( f1->den) * (f2->den)) / r;
-        printf("lcm=%d\n",lcm);
-        printf("%d\n%d\n",f1->num,f2->num);
-        m=(f1->num * lcm)/ f1->den;
-        n=(f2->num * lcm)/ f2->den;
-        sum=m+n;
-        printf("addition of %d/%d+%d/%d=%d/%d",f1->num,f1->den,f2->num,f2->den,sum,lcm);
-}
-
-
-int gcd(struct fraction *f1,struct fraction *f2)
-{
-                int t,*a,*b,gcd;
-                a=&f1->den;
-                b=&f2->den;
-                while(*b!=0)
-                {
-                        t=*b;
-                        *b=*a % *b;
-                        *a=t;
-                }
-                gcd = *a;
-                return gcd;
--- INSERT --                                                                                                                                                 
