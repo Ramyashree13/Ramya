@@ -1,208 +1,22 @@
 #include<stdio.h>
-int getinput1();
-int getinput2();
-int addition(int c,int d);
-int output(int result);
+void input(int *a,int *b);
+void compute(int *a,int *b,int *sum);
+void output(int sum);
 int main()
 {
-  	int c,d,result;
-	
-
-	
-	c=getinput1();;
-	
-
-	d=getinput2();
-	printf("the two numbers %d and %d",c,d);
-	
-	result=addition(c,d);
-	output(result);
-	return 0;
-
-  
- }
-int getinput1()
-{
-  int a;#include<stdio.h>
-
-int main()
-{
-	int a,b,c;
-	getinput(&a,&b);
-	c=add(&a,&b);
-	output(&a,&b,c);
-}
-void getinput(int *a,int *b)
-{
-	printf("enter the two values");
-	scanf("%d %d",a,b);
-}
-int output(int a,int b,int c)
-{
-	printf("%d+%d=%d",a,b,c);
-	
-	return 0;
-}
-int add(int a,int b)
-{
-	int c=a+b;
-	return c;
+        int a,b,sum=0;
+        input(&a,&b);
+        compute(&a,&b,&sum);
+        output(sum);
 }
 
-
-	
-	
-  printf("enter the value of a");
-  scanf("%d",&a);
-  return (a);
+void input(int *a,int *b)
+{
+                printf("enter two numbers to perform addition operation\n");
+                scanf("%d%d",a,b);
 }
-int getinput2()
+void compute(int *a,int *b,int *sum)
 {
-  int b;
-  printf("enter the value of ");
-  scanf("%d",&b);
-  return (b);
-}
-int addition(int c,int d)
-{
-	int add;
-	add=c+d;
-	return(add);
-}
-int output(int result)
-{
-	printf("the addition of two numbers are %d",result);
-	return 0;
-
-}
-
-
-
-
-
-
-
-#include<stdio.h>
-int getinput1();
-int getinput2();
-int addition(int c,int d);
-int output(int result);
-int main()
-{
-//  	int c,d,result;
-	
-	int *a,*b,*add;
-	
-	//c=getinput1();;
-	
-
-	getinput2(a,b);
-	//printf("the two numbers %d and %d",c,d);
-	
-	addition(a,b);
-	output(add);
-	return 0;
-
-  
- }
-/*int getinput1()
-{
-  int a;
-  printf("enter the value of a");
-  scanf("%d",&a);
-  return (a);
-}*/
-int getinput2(int a,int b)
-{
- 
-  printf("enter the value of a and b");
-  scanf("%d%d",&a,&b);
-  return 0;
-  
-}
-int *addition(int c,int d)
-{
-	//int add;
-	add=a+b;
-	//return(add);
-}
-int output(int add)
-{
-	printf("the addition of two numbers are %d",add);
-	return 0;
-
-}
-
-
-#include<stdio.h>
-int getinput2(int a,int b);
-int addition(int a,int b);
-int output(int result);
-int main()
-{
-
-	
-	int *a,*b,*add;
-	getinput2(&a,&b);
-	addition(&a,&b);
-	output(&add);
-	return 0;
-
-  
- }
-
-int getinput2(int a,int b)
-{
- 
-  printf("enter the value of a and b");
-  scanf("%d%d",&a,&b);
-  return 0;
-  
-}
-int addition(int a,int b)
-{
-	//int add;
-	add=a+b;
-	//return(add);
-}
-int output(int add)
-{
-	printf("the addition of two numbers are %d",add);
-	return 0;
-
-}
-
-
-
-
-#include<stdio.h>
-
-int main()
-{
-	int a,b,c;
-	getinput(&a,&b);
-	c=add(&a,&b);
-	output(&a,&b,c);
-}
-void getinput(int *a,int *b)
-{
-	printf("enter the two values");
-	scanf("%d %d",a,b);
-}
-int output(int a,int b,int c)
-{
-	printf("%d+%d=%d",a,b,c);
-	
-	return 0;
-}
-int add(int a,int b)
-{
-	int c=a+b;
-	return c;
-}
-
-
-	
-	
+        *sum=*a+*b;
 
 
