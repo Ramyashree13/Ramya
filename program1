@@ -18,5 +18,12 @@ void input(int *a,int *b)
 void compute(int *a,int *b,int *sum)
 {
         *sum=*a+*b;
+        
+ }
+ void output(int sum)
+{
+        printf("the sum of two numbers are %d\n",sum);
+}
+
 
 
