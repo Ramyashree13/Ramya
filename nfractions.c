@@ -37,7 +37,7 @@ void compute(struct fraction a[],int *n)
         /*int i;
         for(i=0;i<*n;i++)
                 printf("%d%d",a[i].num,a[i].den);*/
-        int gcd1,num1,den1,i,p=1,l,b[*n],r=0;
+        int gcd1,*num1,*den1,i,p=1,l,b[*n],r=0;
         for(i=0;i<*n;i++)
                 p*= a[i].den;
         printf("%d\n",p);
@@ -52,13 +52,13 @@ void compute(struct fraction a[],int *n)
         printf("%d\n",r);
         gcd1=gcd(r,p);
         printf("gcd=%d\n",gcd1);
-        num1=r/gcd1;
-        den1=p/gcd1;
-        printf("%d\n%d\n",num1,den1);
+        *num1=r/gcd1;
+        *den1=p/gcd1;
 
-
-
-
+}
+void output(int *num,int *den)
+{
+        printf("the sum of addtion of fractions is=%d/%d\n",*num,*den);
 }
 
 
@@ -68,8 +68,9 @@ int main()
         int n;
         input(a,&n);
         compute(a,&n);
+        output(&num,&den);
         return 0;
 
 }
 
--- INSERT --               
+~
