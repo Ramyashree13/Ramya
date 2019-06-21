@@ -8,10 +8,9 @@ int gcd(int a,int b)
 {
         int c;
         char true=1;
-        c=a%b;
-        printf("c=%d\n",c);
         while(true)
         {
+                c=a%b;
                 if(c==0)
                         return b;
                 else
@@ -61,6 +60,8 @@ void compute(struct fraction a[],int *n)
 
 
 }
+
+
 int main()
 {
         struct fraction a[5];
@@ -71,5 +72,4 @@ int main()
 
 }
 
-~
-
+-- INSERT --               
