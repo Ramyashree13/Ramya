@@ -21,58 +21,57 @@ int gcd(int a,int b)
         }
 }
 
-void input(struct fraction a[])
+void input(int n,struct fraction a[])
 {
         int i;
-/*      printf("enter the size of arraqy\n");
-        scanf("%d",n);*/
         printf("enter the fraction number\n");
         for(i=0;i<n;i++)
                 scanf("%d%d",&a[i].num,&a[i].den);
         for(i=0;i<n;i++)
         printf(" %d/%d\n",a[i].num,a[i].den);
 }
-/*void compute(struct fraction a[],int *n)
+void compute(int n,struct fraction a[],struct fraction *s)
 {
-        /*int i;
-        for(i=0;i<*n;i++)
-                printf("%d%d",a[i].num,a[i].den);
-        int gcd1,*num1,*den1,i,p=1,l,b[*n],r=0;
-        for(i=0;i<*n;i++)
+
+        int gcd1,i,p=1,l,b[n],r=0;
+        for(i=0;i<n;i++)
                 p*= a[i].den;
         printf("%d\n",p);
 
-        for(i=0;i<*n;i++)
+        for(i=0;i<n;i++)
         {
                 l=p/a[i ].den;
                 b[i]=l * a[i].num;
         }
-        for(i=0;i<*n;i++)
+        for(i=0;i<n;i++)
                 r=r+b[i];
         printf("%d\n",r);
         gcd1=gcd(r,p);
         printf("gcd=%d\n",gcd1);
-        *num1=r/gcd1;
-        *den1=p/gcd1;
+        s->num=r/gcd1;
+        s->den=p/gcd1;
+
 }
-void output(int *num,int *den)
+void output(struct fraction sum)
 {
-        printf("the sum of addtion of fractions is=%d/%d\n",*num,*den);
-}*/
+        printf("the sum of fractions is= %d/%d",sum.num,sum.den);
+}
 
 
 int main()
 {
-
         int n;
-        printf("enter the size of array\n");
+        struct fraction sum,*s;
+        s=&sum;
+        printf("enter the array size");
         scanf("%d",&n);
         struct fraction a[n];
-        input(a,&n);
-        compute(a,&n);
-        output(&num,&den);
+        input(n,a);
+        compute(n,a,s);
+        output(sum);
         return 0;
 
 }
+
 
 -- INSERT --                                             
