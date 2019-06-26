@@ -7,18 +7,12 @@ struct fraction
 int gcd(int a,int b)
 {
         int c;
-        char true=1;
-        while(true)
+        while(c=a%b)
         {
-                c=a%b;
-                if(c==0)
-                        return b;
-                else
-                {
-                        a=b;
-                        b=c;
-                }
+                a=b;
+                b=c;
         }
+        return b;
 }
 
 void input(int n,struct fraction a[])
@@ -26,17 +20,14 @@ void input(int n,struct fraction a[])
         int i;
         printf("enter the fraction number\n");
         for(i=0;i<n;i++)
-                scanf("%d%d",&a[i].num,&a[i].den);
-        for(i=0;i<n;i++)
-        printf(" %d/%d\n",a[i].num,a[i].den);
+                scanf("%d/%d",&a[i].num,&a[i].den);
 }
-void compute(int n,struct fraction a[],struct fraction *s)
+void compute(int n,struct fraction a[n],struct fraction *s)
 {
 
         int gcd1,i,p=1,l,b[n],r=0;
         for(i=0;i<n;i++)
                 p*= a[i].den;
-        printf("%d\n",p);
 
         for(i=0;i<n;i++)
         {
@@ -45,16 +36,16 @@ void compute(int n,struct fraction a[],struct fraction *s)
         }
         for(i=0;i<n;i++)
                 r=r+b[i];
-        printf("%d\n",r);
         gcd1=gcd(r,p);
-        printf("gcd=%d\n",gcd1);
         s->num=r/gcd1;
         s->den=p/gcd1;
 
 }
-void output(struct fraction sum)
+void output(int n,struct fraction a[n],struct fraction sum)
 {
-        printf("the sum of fractions is= %d/%d",sum.num,sum.den);
+        for (int i=0;i<n;i++)
+                printf(" %d/%d +",a[i].num,a[i].den);
+        printf("=%d/%d",sum.num,sum.den);
 }
 
 
@@ -68,7 +59,7 @@ int main()
         struct fraction a[n];
         input(n,a);
         compute(n,a,s);
-        output(sum);
+        output(n,a,sum);
         return 0;
 
 }
