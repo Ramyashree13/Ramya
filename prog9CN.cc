@@ -64,6 +64,7 @@ int  main (int argc, char *argv[])
 		stack.Install (p2pNodes.Get (1));  
 		stack.Install (csmaNodes);   
 		stack.Install (p2pNodes1.Get (1)); 
+		stack.Install (p2pNodes1.Get (2)); 
 
  		Ipv4AddressHelper address;   
 		address.SetBase ("10.1.1.0", "255.255.255.0");   
