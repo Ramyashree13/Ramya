@@ -79,7 +79,7 @@ int main (int argc, char *argv[])
 	echoClient1.SetAttribute ("Interval", TimeValue (Seconds (2.0)));   
 	echoClient1.SetAttribute ("PacketSize", UintegerValue (512)); 
  
-	ApplicationContainer clientApps2 = echoClient1.Install (nodes2.Get (1));   
+	ApplicationContainer clientApps2 = echoClient1.Install (nodes1.Get (1));   
 	clientApps2.Start (Seconds (2.0));   
 	clientApps2.Stop (Seconds (10.0)); 
  
